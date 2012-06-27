@@ -1,6 +1,6 @@
 # last-seen-recipes-handler 
 
-A Chef handler that will add a new node attribute called "last_seen_recipes" which contains the list of all recipes run on the node _including_ the included recipes.  This can then be used to search nodes for included recipes
+A Chef handler that will add a new node attribute called "last\_seen\_recipes" which contains the list of all recipes run on the node _including_ the included recipes.  This can then be used to search nodes for included recipes.
 
 ## Installation
 
