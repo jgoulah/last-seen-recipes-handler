@@ -5,9 +5,9 @@ class LastSeenRecipesHandler < Chef::Handler
     Chef::Log.debug("seen recipes handler recipe dump");
     Chef::Log.debug(last_seen_recipes)
 
-    node[:last_seen_recipes] = []
+    node.set[:last_seen_recipes] = []
     unless last_seen_recipes.empty?
-      node[:last_seen_recipes] = last_seen_recipes
+      node.set[:last_seen_recipes] = last_seen_recipes
     end
     node.save
   end
