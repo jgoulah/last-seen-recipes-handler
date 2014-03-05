@@ -9,6 +9,12 @@ class LastSeenRecipesHandler < Chef::Handler
     unless last_seen_recipes.empty?
       node.set[:last_seen_recipes] = last_seen_recipes
     end
-    node.save
+
+    # Save attributes to node unless overridden runlist has been supplied
+    if Chef::Config.override_runlist
+      Chef::Log.warn("Skipping final node save because override_runlist was given")
+    else
+      node.save
+    end
   end
 end
